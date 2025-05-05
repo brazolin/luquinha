@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda ao Luquinha Faisal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('musica-tema.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 30px;
+            display: inline-block;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .pix-code {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            color: black;
+            font-family: monospace;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ajudando Luquinha Faisal</h1>
+        <p>Luquinha Faisal, talentoso baterista, precisa da sua ajuda para cobrir as suas custas médicas. Contribua para essa causa com o código PIX abaixo ou escaneie o QR Code.</p>
+
+        <div class="pix-code" id="pix-code">00020126360014BR.GOV.BCB.PIX0114+55179920027035204000053039865802BR5901N6001C62070503***6304D3F3</div>
+        
+        <button onclick="copyPixCode()">Copiar Código PIX</button>
+
+        <div class="qr-code">
+            <img src="qrcode-pix.png" alt="QR Code do PIX">
+        </div>
+    </div>
+
+    <script>
+        function copyPixCode() {
+            var pixCode = document.getElementById("pix-code").innerText;
+            navigator.clipboard.writeText(pixCode)
+                .then(() => alert("Código PIX copiado!"))
+                .catch(err => alert("Erro ao copiar código PIX"));
+        }
+    </script>
+</body>
+</html>
